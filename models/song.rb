@@ -4,14 +4,14 @@ class Song < ApplicationModel
   
   attr_reader :id, :artist, :title
 
-  def initialize(json)
-    @id = json["id"]
-    @artist = json["artist"]
-    @title = json["title"]
+  def initialize(attributes)
+    @id = attributes["id"]
+    @artist = attributes["artist"]
+    @title = attributes["title"]
   end
 
   def to_json(options = {})
-    {id: id, artist: artist, title: title}
+    {id: id, artist: artist, title: title}.to_json
   end
   
   protected

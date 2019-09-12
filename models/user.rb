@@ -4,13 +4,13 @@ class User < ApplicationModel
   
   attr_reader :id, :name
 
-  def initialize(json)
-    @id = json["id"]
-    @name = json["name"]
+  def initialize(attributes)
+    @id = attributes["id"]
+    @name = attributes["name"]
   end
 
   def to_json(options = {})
-    {id: id, name: name}
+    {id: id, name: name}.to_json
   end
   
   protected
