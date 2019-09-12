@@ -23,7 +23,7 @@ You can run the unit tests from the top of the project with:
 
 In order to better manually test it on Linux as well as give you a consistent option for using this, I added a Dockerfile and verifed that you can run it through docker if you like. Here's how:
 
-##1. The straightforward way
+1. The straightforward way
 
 You can move any json files you want to use into this directory, then run:
 
@@ -37,7 +37,7 @@ Now you're in the container in the main repo for mixtapes and you can run all th
 
 OR
 
-##2. The more flexible way
+2. The more flexible way
 
 You can run the container with a volume mount like this:
 
