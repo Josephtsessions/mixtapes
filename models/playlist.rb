@@ -2,6 +2,8 @@ require_relative './application_model'
 
 class Playlist < ApplicationModel
   
+  attr_reader :id, :user_id, :song_ids
+  
   def initialize(json)
     @id = json["id"]
     @user_id = json["user_id"]

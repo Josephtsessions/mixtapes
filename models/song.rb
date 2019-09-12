@@ -1,6 +1,8 @@
 require_relative './application_model'
 
 class Song < ApplicationModel
+  
+  attr_reader :id, :artist, :title
 
   def initialize(json)
     @id = json["id"]

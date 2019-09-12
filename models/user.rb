@@ -1,6 +1,8 @@
 require_relative './application_model'
 
 class User < ApplicationModel
+  
+  attr_reader :id, :name
 
   def initialize(json)
     @id = json["id"]
