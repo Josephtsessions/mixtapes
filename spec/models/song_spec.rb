@@ -32,7 +32,7 @@ describe Song do
     let(:song) { Song.new(input) }
 
     it "should match the expected output" do
-      expect(song.to_json).to eq("{\"id\":1,\"artist\":\"Tupperware Remix Party\",\"title\":\"The Perfect Product\"}")
+      expect(song.to_json).to eq({:artist=>"Tupperware Remix Party", :id=>1, :title=>"The Perfect Product"})
     end
   end
 end

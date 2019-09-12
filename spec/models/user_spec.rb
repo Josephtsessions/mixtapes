@@ -28,7 +28,7 @@ describe User do
     let(:user) { User.new(input) }
 
     it "should match the expected output" do
-      expect(user.to_json).to eq("{\"id\":1,\"name\":\"Bob Ross\"}")
+      expect(user.to_json).to eq({:id=>1, :name=>"Bob Ross"})
     end
   end
 end

@@ -5,6 +5,8 @@ require_relative './models/playlist'
 require_relative './models/song'
 require_relative './models/user'
 
+require_relative './mixtape_parser'
+
 if ARGV.length != 3
   puts "Usage: main.rb [input_path.json] [changes_path.json] [output_path.json]"
   exit 1
@@ -24,18 +26,11 @@ if File.exist?(OUTPUT_FILENAME)
   exit 1
 end
 
-begin
-  input = File.read(INPUT_FILENAME)
-  
-  input_json = JSON.parse(input)
-  
-  playlists = Playlist.from_json(input_json)
-  songs = Song.from_json(input_json)
-  users = User.from_json(input_json)
-rescue JSON::ParserError => e
-   puts "#{INPUT_FILENAME} doesn't appear to be properly formatted JSON." 
-   raise e
-end
+parser = MixtapeParser.new(INPUT_FILENAME)
+
+playlists = parser.playlists
+songs = parser.songs
+users = parser.users
 
 begin
   changes_file = File.read(CHANGES_FILENAME)

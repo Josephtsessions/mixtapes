@@ -32,7 +32,7 @@ describe Playlist do
     let(:playlist) { Playlist.new(input) }
 
     it "should match the expected output" do
-      expect(playlist.to_json).to eq("{\"id\":1,\"user_id\":\"2\",\"song_ids\":[15,64,2]}")
+      expect(playlist.to_json).to eq({:id=>1, :song_ids=>[15, 64, 2], :user_id=>"2"})
     end
   end
   
