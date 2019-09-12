@@ -1,0 +1,28 @@
+{
+  "changes" : [
+    {
+      "type" : "add song",
+      "playlist_id" : "1",
+      "song_id" : "1"
+    },
+    {
+      "type" : "add song",
+      "playlist_id" : "1",
+      "song_id" : "1"
+    },
+    {
+      "type" : "create playlist",
+      "playlist_id" : "1",
+      "song_ids": ["5"]
+    },
+    {
+      "type" : "remove playlist",
+      "playlist_id" : "2"
+    },
+    {
+      "type" : "add song",
+      "playlist_id" : "14218",
+      "song_id" : "1"
+    }
+  ]
+}
