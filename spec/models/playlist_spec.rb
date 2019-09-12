@@ -35,4 +35,21 @@ describe Playlist do
       expect(playlist.to_json).to eq("{\"id\":1,\"user_id\":\"2\",\"song_ids\":[15,64,2]}")
     end
   end
+  
+  context "adding a song" do
+    let(:input) { {"id" => 1, "user_id" => "2", "song_ids" => [15, 64, 2]} }
+    let(:playlist) { Playlist.new(input) }
+    
+    it "should add a song id to its list of song ids" do
+      playlist.add_song(500)
+      
+      expect(playlist.song_ids).to eq([15, 64, 2, 500])
+    end
+    
+    it "should not add a song id to its list of song ids if the id already exists" do
+      playlist.add_song(15)
+
+      expect(playlist.song_ids).to eq([15, 64, 2])
+    end
+  end
 end

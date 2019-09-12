@@ -10,6 +10,10 @@ class Playlist < ApplicationModel
     @song_ids = attributes["song_ids"]
   end
   
+  def add_song(id)
+    song_ids.push(id) unless song_ids.include?(id)
+  end
+  
   # In a nontrivial system, I'd use an existing gem like AMS for serialization to split that responsibility out into its own set of files.
   # We could test them independently, reuse them elsewhere and simplify our models. 
   # But for our purposes, it's simpler to just do 'em here.
