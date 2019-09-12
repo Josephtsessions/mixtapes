@@ -18,7 +18,7 @@ class Playlist < ApplicationModel
   # We could test them independently, reuse them elsewhere and simplify our models. 
   # But for our purposes, it's simpler to just do 'em here.
   def to_json(options = {})
-    {id: id, user_id: user_id, song_ids: song_ids}.to_json
+    {id: id, user_id: user_id, song_ids: song_ids}
   end
   
   protected

@@ -11,7 +11,7 @@ class Song < ApplicationModel
   end
 
   def to_json(options = {})
-    {id: id, artist: artist, title: title}.to_json
+    {id: id, artist: artist, title: title}
   end
   
   protected

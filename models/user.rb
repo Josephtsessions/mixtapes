@@ -10,7 +10,7 @@ class User < ApplicationModel
   end
 
   def to_json(options = {})
-    {id: id, name: name}.to_json
+    {id: id, name: name}
   end
   
   protected
