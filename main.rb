@@ -8,20 +8,14 @@ require_relative './models/user'
 require_relative './mixtape_parser'
 require_relative './mixtape_changer'
 
-if ARGV.length != 3
-  puts "Usage: main.rb [input_path.json] [changes_path.json] [output_path.json]"
+if ARGV.length != 2
+  puts "Usage: main.rb [input_path.json] [changes_path.json]"
   exit 1
 end
 
 INPUT_FILENAME = ARGV[0]
 CHANGES_FILENAME = ARGV[1]
-OUTPUT_FILENAME = ARGV[2]
-
-# We should check for an existing file before blindly writing to it so bad things don't happen!
-if File.exist?(OUTPUT_FILENAME)
-  puts "#{OUTPUT_FILENAME} already exists. Please specify a new filename or move the file so you don't lose data!"
-  exit 1
-end
+OUTPUT_FILENAME = "output.json"
 
 input_json = File.read(INPUT_FILENAME)
 parser = MixtapeParser.new(input_json)
