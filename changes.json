@@ -8,7 +8,37 @@
     {
       "type" : "add song",
       "playlist_id" : "1",
-      "song_id" : "1"
+      "song_id" : "2"
+    },
+    {
+      "type" : "add song",
+      "playlist_id" : "1",
+      "song_id" : "3"
+    },
+    {
+      "type" : "add song",
+      "playlist_id" : "1",
+      "song_id" : "4"
+    },
+    {
+      "type" : "add song",
+      "playlist_id" : "1",
+      "song_id" : "5"
+    },
+    {
+      "type" : "add song",
+      "playlist_id" : "1",
+      "song_id" : "6"
+    },
+    {
+      "type" : "add song",
+      "playlist_id" : "1",
+      "song_id" : "7"
+    },
+    {
+      "type" : "add song",
+      "playlist_id" : "1",
+      "song_id" : "8"
     },
     {
       "type" : "create playlist",
