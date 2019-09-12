@@ -8,7 +8,7 @@ You can run mixtapes from the project directory with:
 
 ```
 bundle install
-bundle exec ./mixtapes [input.json] [changes.json] [output_filename.json]
+bundle exec ./mixtapes [input.json] [changes.json]
 ```
 
 The provided json input is names "mixtape.json".
