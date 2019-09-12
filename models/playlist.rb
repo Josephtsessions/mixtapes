@@ -5,8 +5,8 @@ class Playlist < ApplicationModel
   attr_reader :id, :user_id, :song_ids
   
   def initialize(attributes)
-    @id = attributes["id"]
-    @user_id = attributes["user_id"]
+    @id = attributes["id"]&.to_s
+    @user_id = attributes["user_id"]&.to_s
     @song_ids = attributes["song_ids"]
   end
   

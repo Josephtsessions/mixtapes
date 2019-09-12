@@ -3,7 +3,8 @@ require_relative "../mixtape_parser.rb"
 describe MixtapeParser do
   
   describe "reading a json file" do
-    let(:mixtape_parser) { MixtapeParser.new("spec/mixtape.json") }
+    let(:mixtape_parser) { MixtapeParser.new(json) }
+    let(:json) { File.read("spec/mixtape.json") }
     
     it "returns the correct users" do
       user = mixtape_parser.users.detect {|user| user.id == "1"}

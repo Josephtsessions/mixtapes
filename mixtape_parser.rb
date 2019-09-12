@@ -1,16 +1,14 @@
 class MixtapeParser
   
-  def initialize(mixtape_filename)
-    @filename = mixtape_filename
+  def initialize(input_json)
+    @input_json = input_json
   end
   
   def json
     @json ||= begin
-      input = File.read(@filename)
-      
-      JSON.parse(input)
+      JSON.parse(@input_json)
     rescue StandardError => e
-      puts "Couldn't read #{@filename}:"
+      puts "Couldn't parse input json:"
       raise e
     end
   end
