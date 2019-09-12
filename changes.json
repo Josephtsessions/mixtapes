@@ -42,6 +42,7 @@
     },
     {
       "type" : "create playlist",
+      "user_id" : "1",
       "playlist_id" : "1",
       "song_ids": ["5"]
     },
