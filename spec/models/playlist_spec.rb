@@ -17,5 +17,13 @@ describe Playlist do
     it "should take the song_ids from input json" do
       expect(playlist.song_ids).to eq(input_json["song_ids"])
     end
+    
+    context "with unwhitelisted fields" do
+      let(:input_json) { {id: 1, user_id: "2", song_ids: [15, 64, 2], rating: 5}.to_json }
+      
+      it "shouldn't take other fields from input json" do
+        expect{playlist.rating}.to raise_error(NoMethodError)
+      end
+    end
   end
 end

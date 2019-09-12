@@ -17,5 +17,13 @@ describe Song do
     it "should take the artist from input json" do
       expect(song.artist).to eq(input_json["artist"])
     end
+
+    context "with unwhitelisted fields" do
+      let(:input_json) { {id: 1, title: "The Perfect Product", artist: "Tupperware Remix Party", rating: 5}.to_json }
+
+      it "shouldn't take other fields from input json" do
+        expect{song.rating}.to raise_error(NoMethodError)
+      end
+    end
   end
 end

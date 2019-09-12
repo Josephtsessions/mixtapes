@@ -13,5 +13,13 @@ describe User do
     it "should take the name from input json" do
       expect(user.name).to eq(input_json["name"])
     end
+
+    context "with unwhitelisted fields" do
+      let(:input_json) { {id: 1, name: "Bob Ross", rating: 5, style: 'majestic'}.to_json }
+
+      it "shouldn't take other fields from input json" do
+        expect{user.style}.to raise_error(NoMethodError)
+      end
+    end
   end
 end
