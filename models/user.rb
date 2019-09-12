@@ -8,6 +8,10 @@ class User < ApplicationModel
     @id = json["id"]
     @name = json["name"]
   end
+
+  def to_json(options = {})
+    {id: id, name: name}
+  end
   
   protected
   

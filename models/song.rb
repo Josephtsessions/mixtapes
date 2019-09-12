@@ -9,6 +9,10 @@ class Song < ApplicationModel
     @artist = json["artist"]
     @title = json["title"]
   end
+
+  def to_json(options = {})
+    {id: id, artist: artist, title: title}
+  end
   
   protected
   
