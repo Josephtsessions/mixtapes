@@ -19,6 +19,36 @@ You can run the unit tests from the top of the project with:
 
 `bundle exec rspec`
 
+## Docker Instructions
+
+In order to better manually test it on Linux as well as give you a consistent option for using this, I added a Dockerfile and verifed that you can run it through docker if you like. Here's how:
+
+##1. The straightforward way
+
+You can move any json files you want to use into this directory, then run:
+
+```
+docker build . -t mixtapes:latest
+docker run -d --name mixtapes mixtapes:latest
+docker exec -it mixtapes bash
+```
+
+Now you're in the container in the main repo for mixtapes and you can run all the usual stuff above.
+
+OR
+
+##2. The more flexible way
+
+You can run the container with a volume mount like this:
+
+```
+docker build . -t mixtapes:latest
+docker run -d --name mixtapes -v $(pwd):/src/mixtapes mixtapes:latest
+docker exec -it mixtapes bash
+```
+
+Now any changes that are made to either the docker container's repo or your own repo will appear on both ends. You can freely move any test files you use into this repo and run 'em from within the container the way you expect to be able to.
+
 ## Scaling this up further
 
 In a real production system, we'd likely be using a relational database for this instead of JSON backed data. That'd solve a ton of problems as I a lot of the complexity of the MixtapeChanger is just doing things like querying for the right records, and doing that at the database level is gonna be a great deal more performant.
